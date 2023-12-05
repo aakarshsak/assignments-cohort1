@@ -3,4 +3,21 @@
 */
 
 function wait(n) {
+  return new Promise((resolve, reject) => {
+    if (n < 0) {
+      reject("Baddd.......");
+    }
+
+    setTimeout(() => {
+      resolve(`Promise resolved after ${n} seconds`);
+    }, n * 1000);
+  });
 }
+
+wait(2)
+  .then((d) => {
+    console.log(d);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
